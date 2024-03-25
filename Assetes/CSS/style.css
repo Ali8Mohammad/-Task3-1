@@ -1,0 +1,1212 @@
+/* Global */
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: "Truculenta", sans-serif;
+}
+
+/* My framework */
+:root {
+    /* Colors and global */
+    --main-width: 700px;
+    --transition: 0.3s;
+    --maincolor: #2c3e50;
+    --main-bgcolor: #1abc9c;
+    --mainhovercolor: white;
+    --mainhover-bgcolor: #2c3e50;
+    /* Mobile screen */
+    --width-mobilescreen: 300px;
+    --font-mobilescreen: 15px;
+    --fontpar-mobilescreen: 10px;
+    /* Small screen */
+    --width-smallscreen: 500px;
+    --font-smallscreen: 18px;
+    --font-smallfooter: 8px;
+    /* Medium screen */
+    --width-mediumscreen: 600px;
+    --font-mediumscreen: 16px;
+    --fontpar-mediumscreen: 14px;
+    --font-mediumfooter: 13px;
+    /* Large screen */
+    --width-largescreen: 700px;
+    --font-largescreen: 30px;
+    --fontpar-largescreen: 16px;
+    --font-largefooter: 15px;
+}
+
+.container {
+    width: var(--main-width);
+    margin: auto;
+}
+
+.div-of-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    color: var(--maincolor);
+    transition: var(--transition);
+}
+
+.div-of-title h3 {
+    transition: var(--transition);
+}
+
+.div-of-title h3:hover {
+    color: var(--mainhovercolor);
+    background-color: var(--mainhover-bgcolor);
+}
+
+.div-of-title span {
+    position: relative;
+}
+
+.div-of-title span::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    background-color: var(--mainhover-bgcolor);
+    height: 1px;
+    right: 15px;
+    bottom: 4px;
+}
+
+.div-of-title span::after {
+    content: "";
+    background-color: var(--mainhover-bgcolor);
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    left: 15px;
+    bottom: 4px;
+}
+
+/*--------------------*/
+/*----------Header--------*/
+.header {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-bgcolor);
+}
+
+/* ---------Nav + links-------- */
+.nav {
+    display: flex;
+    color: white;
+    background-color: var(--maincolor);
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    position: fixed;
+    z-index: 1;
+}
+
+.nav h1 {
+    font-size: 30px;
+    transition: var(--transition);
+}
+
+.nav h1:hover {
+    background-color: var(--mainhovercolor);
+    color: var(--mainhover-bgcolor);
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    justify-content: end;
+}
+
+.links a {
+    color: white;
+    justify-content: end;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 100;
+    transition: var(--transition);
+    position: relative;
+}
+
+.links a:hover {
+    background-color: white;
+    color: #2c3e50;
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-bgcolor);
+    height: 3px;
+    width: 0%;
+    left: 1px;
+    bottom: 4px;
+    transition: var(--transition);
+}
+
+.links a:hover::after {
+    width: 90%;
+}
+
+/* ---------------------- */
+
+/* ----------hero------------- */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: var(--main-width);
+    margin: auto;
+    height: 80vh;
+}
+
+/* -------------My photo------------ */
+.hero .photo {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    background-color: #2c3e50;
+    margin: 10px;
+    transition: var(--transition);
+}
+
+.hero .photo:hover {
+    width: 200px;
+    height: 200px;
+}
+
+.hero img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-52%, -63%);
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 100%;
+    transition: var(--transition);
+}
+
+.hero .photo:hover img {
+    display: block;
+    top: 50px;
+    border-radius: 0;
+    left: 125px;
+    width: 90%;
+}
+
+.hero h3 {
+    padding-bottom: 10px;
+    font-size: 30px;
+    color: white;
+    transition: var(--transition);
+    margin: 10px;
+}
+
+.hero h3:hover {
+    background-color: white;
+    color: var(--main-bgcolor);
+    border-radius: 10px;
+}
+
+.hero span {
+    position: relative;
+}
+
+.hero span::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    background-color: rgb(255, 255, 255);
+    height: 1px;
+    right: 15px;
+}
+
+.hero span::after {
+    content: "";
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    left: 15px;
+}
+
+/* ----------------Skills in hero----------- */
+.hero p {
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.hero p:hover {
+    border-bottom: 1px solid white;
+}
+
+/*----------------------------------*/
+/* -------------portflio-------------- */
+.portfolio {
+    height: max-content;
+}
+
+.my-portfolio {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: max-content;
+    margin: 30px auto;
+}
+
+.portfolio h3 {
+    font-size: 40px;
+}
+
+.my-portfolio div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 5px;
+}
+
+/* ------Color of pics's background------  */
+.my-portfolio .red {
+    position: relative;
+    background-color: #ba4c63;
+}
+
+.my-portfolio .sky {
+    position: relative;
+    background-color: #1fa4b6;
+}
+
+.my-portfolio .black {
+    position: relative;
+    background-color: #130f0f;
+}
+
+.my-portfolio .sky-two {
+    position: relative;
+    background-color: #1d83c1;
+}
+
+.my-portfolio .sea {
+    position: relative;
+    background-color: #1037b5;
+}
+
+.my-portfolio .silver {
+    position: relative;
+    background-color: #ccb2a3;
+}
+
+/* Img */
+.my-portfolio img {
+    width: 100px;
+    border-radius: 0;
+    margin: 5px;
+    transition: var(--transition);
+}
+
+.my-portfolio img:hover {
+    width: 75%;
+}
+
+.my-portfolio div span {
+    position: absolute;
+    top: -50px;
+    display: none;
+    transition: var(--transition);
+    color: var(--mainhovercolor);
+    background-color: var(--maincolor);
+    font-size: 30px;
+}
+
+.my-portfolio div:hover span {
+    display: block;
+}
+
+/* ------------------------ */
+/* --------Start About section----------- */
+.about-section {
+    background-color: var(--main-bgcolor);
+    height: max-content;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--main-bgcolor);
+    color: white;
+}
+
+.div-of-title-white {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    color: var(--mainhovercolor);
+    transition: var(--transition);
+}
+
+.div-of-title-white:hover h3 {
+    background-color: var(--mainhovercolor);
+    color: var(--main-bgcolor);
+}
+
+.about h3 {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.div-of-title-white span {
+    position: relative;
+}
+
+.div-of-title-white span::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    background-color: var(--mainhovercolor);
+    height: 1px;
+    right: 15px;
+    bottom: 4px;
+}
+
+.div-of-title-white span::after {
+    content: "";
+    background-color: var(--mainhovercolor);
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    left: 15px;
+    bottom: 4px;
+}
+
+.paragraph-about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: var(--main-width);
+    margin: auto;
+}
+
+.paragraph-about div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+}
+
+.paragraph-about p {
+    padding: 3px;
+    font-size: var(--fontpar-largescreen);
+}
+
+.about button {
+    background-color: transparent;
+    color: white;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+    padding: 10px;
+    margin: 20px 250px;
+}
+
+.about button:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.199);
+}
+
+.about button:focus {
+    color: black;
+    background-color: white
+}
+
+/*-----------------------*/
+/* ---------Contact sectione--------- */
+.contact-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-me form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-me form input {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #bac4cd;
+}
+
+.contact-me textarea {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #bac4cd;
+    width: 300px;
+}
+
+.contact-me button {
+    margin: 10px 250px 10px 0;
+    padding: 10px;
+    background-color: var(--main-bgcolor);
+    color: white;
+    border: none;
+    border-radius: 10%;
+}
+
+/* ------------------- */
+/* --------Footer-------- */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+    background-color: var(--maincolor);
+}
+
+.my-information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 20vh;
+}
+
+.my-information div {
+    width: 25%;
+}
+
+.my-information .location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 10px;
+}
+
+.my-information h5 {
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.my-information .around-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.my-information .around-me h5 {
+    padding: 20px !important;
+    font-size: 10px;
+}
+
+.around-me {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:hover {
+    opacity: 0.75;
+}
+
+.around-me a {
+    color: white;
+    padding: 10px;
+
+}
+
+.around-me {
+    position: relative;
+}
+
+.around-me span {
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.my-information .about-freelance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 10px;
+}
+
+.my-information .about-freelance a {
+    color: #1abc9c;
+}
+
+.my-information li:hover {
+    padding: 10px;
+}
+
+.drakness {
+    color: white;
+    background-color: #1a252f;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+/*Media Queries and Responsive */
+/* ---------------------mobile screen--------------------- */
+@media (max-width: 767px) {
+
+    /* header */
+    .header {
+        margin: auto;
+        height: 100vh;
+    }
+
+    .container {
+        width: var(--width-mobilescreen);
+        margin: auto;
+    }
+
+    .nav {
+        width: 100vw;
+        padding: 0px 20px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .nav h1 {
+        padding: 10px;
+        font-size: var(--font-mobilescreen);
+    }
+
+    .nav a {
+        padding: 0 10px;
+        font-size: var(--font-mobilescreen);
+    }
+
+    .hero {
+        width: var(--width-mobilescreen);
+        height: 100vh;
+    }
+
+    .hero .photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero .photo:hover {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero .photo:hover img {
+        display: block;
+        top: 20px;
+        border-radius: 0;
+        left: 50%;
+        width: 90%;
+    }
+
+    .hero h3 {
+        padding: 0;
+        font-size: var(--font-mobilescreen);
+    }
+
+    .hero p {
+        font-size: var(--fontpar-mobilescreen);
+    }
+    .links a::after {
+        height: 1px;
+    }
+    .div-of-title h3 {
+        font-size: var(--font-mobilescreen);
+        padding: 10px;
+    }
+
+    .my-portfolio div {
+        width: 100vw;
+    }
+
+    .my-portfolio img:hover {
+        width: 35%;
+    }
+
+    .my-portfolio div span {
+        top: -10px;
+        font-size: var(--font-mobilescreen);
+    }
+
+    .paragraph-about {
+        width: var(--width-mobilescreen);
+    }
+
+    .paragraph-about p {
+        padding: 3px;
+        font-size: var(--fontpar-mobilescreen);
+    }
+
+    .about button {
+        margin: 20px auto;
+    }
+
+    .contact-me form input {
+        width: var(--width-mobilescreen);
+    }
+
+    .contact-me textarea {
+        width: var(--width-mobilescreen);
+    }
+
+    .contact-me button {
+        margin: 10px 250px 10px 0;
+        padding: 10px;
+    }
+
+    .my-information {
+        width: var(--width-mobilescreen);
+        height: 12vh;
+        margin: 10px 0;
+    }
+
+    .my-information .location {
+        font-size: 5px;
+        padding: 0 10px;
+    }
+
+    .my-information h5 {
+        font-size: 7px;
+    }
+
+    .my-information div {
+        width: 25%;
+    }
+
+    .my-information .around-me h5 {
+        padding: 0 !important;
+        font-size: 7px;
+    }
+
+    .fa-brands {
+        font-size: 8px;
+    }
+
+    .around-me {
+        padding: 10px;
+    }
+
+    .around-me span {
+        margin: 2px;
+        font-size: 8px;
+    }
+
+    .my-information .about-freelance {
+        font-size: 5px;
+    }
+
+    .drakness {
+        font-size: 5px;
+    }
+}
+
+/*------------------------------ small screen -------------------------------*/
+@media (min-width: 768px) {
+    .header {
+        margin: auto;
+        height: 100vh;
+    }
+
+    .container {
+        width: var(--width-smallscreen);
+        margin: auto;
+        font-size: 10px;
+    }
+
+    .div-of-title h3 {
+        font-size: var(--font-smallscreen);
+        padding: 10px;
+    }
+
+    .nav {
+        width: 100vw;
+        padding: 2px 80px;
+        justify-content: space-between;
+    }
+
+    .nav h1 {
+        font-size: var(--font-smallscreen);
+    }
+
+    .nav a {
+        padding: 2px 10px;
+        font-size: var(--font-smallscreen);
+    }
+    .links a::after {
+        height: 3px;
+        bottom: 2px;
+    }
+    .hero {
+        height: 80vh;
+        width: var(--width-smallscreen);
+    }
+
+    .hero .photo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero .photo:hover {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero .photo:hover img {
+        top: 40px;
+        left: 75px;
+    }
+
+    .hero h3 {
+        padding: 0;
+        font-size: var(--font-mobilescreen);
+    }
+
+    .hero p {
+        font-size: var(--fontpar-mobilescreen);
+    }
+    .my-portfolio {
+        margin: 30px auto;
+    }
+
+    .portfolio h3 {
+        font-size: var(--font-smallscreen);
+    }
+
+    .my-portfolio div {
+        width: 150px;
+    }
+
+    .my-portfolio img:hover {
+        width: 75%;
+    }
+
+    .my-portfolio div span {
+        top: -20px;
+        font-size: var(--font-smallscreen);
+    }
+
+    .paragraph-about {
+        width: var(--width-smallscreen);
+    }
+
+    .paragraph-about p {
+        padding: 3px;
+        font-size: var(--fontpar-mediumscreen);
+    }
+
+    .about button {
+        margin: 50px auto 20px;
+    }
+
+    .contact-me form input {
+        width: var(--width-smallscreen);
+    }
+
+    .contact-me textarea {
+        width: var(--width-smallscreen);
+    }
+
+    .contact-me button {
+        margin: 10px 450px 10px 0;
+        padding: 10px;
+    }
+
+    .my-information {
+        width: var(--width-smallscreen);
+        height: 12vh;
+        margin: 10px 0;
+    }
+
+    .my-information .location {
+        font-size: var(--font-smallfooter);
+        padding: 0 10px;
+    }
+
+    .my-information h5 {
+        font-size: 9px;
+    }
+
+    .my-information div {
+        width: 25%;
+    }
+
+    .my-information .around-me h5 {
+        padding: 10px !important;
+        font-size: 9px;
+    }
+
+    .fa-brands {
+        font-size: 9px;
+    }
+
+    .around-me {
+        padding: 10px;
+    }
+
+    .around-me span {
+        margin: 2px;
+        font-size: 9px;
+    }
+
+    .my-information .about-freelance {
+        font-size: var(--font-smallfooter);
+    }
+
+    .drakness {
+        font-size: var(--font-smallfooter);
+    }
+}
+
+/*------------------------------ medium screen -------------------------------*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header {
+        margin: auto;
+        height: 100vh;
+    }
+
+    .container {
+        width: var(--width-mediumscreen);
+        margin: auto;
+    }
+
+    .div-of-title h3 {
+        font-size: var(--font-mediumscreen);
+    }
+
+    .nav {
+        width: 100vw;
+        padding: 4px 80px;
+    }
+
+    .nav h1 {
+        font-size: var(--font-mediumscreen);
+    }
+
+    .nav a {
+        padding: 2px 10px;
+        font-size: var(--font-mediumscreen);
+    }
+    .links a::after {
+        height: 3px;
+        bottom: 2px;
+    }
+    .hero {
+        height: 90vh;
+        width: var(--width-mediumscreen);
+    }
+
+    .hero .photo {
+        height: 175px;
+        width: 175px;
+    }
+
+    .hero h3 {
+        padding: 0;
+        font-size: var(--font-mediumscreen);
+    }
+
+    .hero p {
+        font-size: var(--fontpar-mediumscreen);
+    }
+
+    .hero .photo:hover {
+        width: 175px;
+        height: 175px;
+    }
+
+    .hero .photo:hover img {
+        top: 50px;
+        left: 90px;
+    }
+
+    .my-portfolio {
+        margin: 30px auto;
+    }
+
+    .portfolio h3 {
+        font-size: var(--font-smallscreen);
+    }
+
+    .my-portfolio div {
+        width: 150px;
+    }
+
+    .my-portfolio img:hover {
+        width: 75%;
+    }
+
+    .my-portfolio div span {
+        top: -20px;
+        font-size: var(--font-smallscreen);
+    }
+
+    .paragraph-about {
+        width: var(--width-smallscreen);
+    }
+
+    .paragraph-about p {
+        padding: 3px;
+        font-size: var(--fontpar-mediumscreen);
+    }
+
+    .about button {
+        margin: 50px auto 20px;
+    }
+
+    .contact-me form input {
+        width: var(--width-mediumscreen);
+    }
+
+    .contact-me textarea {
+        width: var(--width-mediumscreen);
+    }
+
+    .contact-me button {
+        margin: 10px 550px 10px 0;
+        padding: 10px;
+    }
+
+    .my-information {
+        width: var(--width-smallscreen);
+        height: 12vh;
+        margin: 10px 0;
+    }
+
+    .my-information .location {
+        font-size: var(--font-smallfooter);
+        padding: 0 10px;
+    }
+
+    .my-information h5 {
+        font-size: 9px;
+    }
+
+    .my-information div {
+        width: 25%;
+    }
+
+    .my-information .around-me h5 {
+        padding: 10px !important;
+        font-size: 9px;
+    }
+
+    .fa-brands {
+        font-size: 9px;
+    }
+
+    .around-me {
+        padding: 10px;
+    }
+
+    .around-me span {
+        margin: 2px;
+    }
+
+    .my-information .about-freelance {
+        font-size: var(--font-smallfooter);
+    }
+
+    .drakness {
+        font-size: var(--font-smallfooter);
+    }
+}
+
+/*------------------------------ Large screen -------------------------------*/
+@media (min-width: 1200px) {
+    .container {
+        width: var(--width-largescreen);
+        margin: auto;
+    }
+
+    .div-of-title h3 {
+        font-size: var(--font-largescreen);
+    }
+
+    .nav {
+        width: 100vw;
+        padding: 4px 80px;
+    }
+
+    .nav h1 {
+        font-size: var(--font-largescreen);
+    }
+
+    .nav a {
+        padding: 2px 10px;
+        font-size: var(--font-largescreen);
+    }
+
+    .hero {
+        height: 90vh;
+        width: var(--width-largescreen);
+    }
+
+    .hero .photo {
+        height: 200px;
+        width: 200px;
+    }
+
+    .hero img {
+        left: 47%;
+        top: 55%;
+        transform: translate(-52%, -63%);
+        width: 90%;
+        border-radius: 45%;
+    }
+
+    .hero h3 {
+        padding: 0;
+        font-size: var(--font-largescreen);
+    }
+
+    .hero p {
+        font-size: var(--fontpar-largescreen);
+    }
+
+    .hero .photo:hover {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero .photo:hover img {
+        top: 105px;
+        left: 100px;
+        border-radius: 50%;
+    }
+
+    .my-portfolio {
+        margin: 30px;
+    }
+
+    .portfolio h3 {
+        font-size: var(--font-largescreen);
+    }
+
+    .my-portfolio div {
+        width: 200px;
+    }
+
+    .my-portfolio img:hover {
+        width: 60%;
+    }
+
+    .my-portfolio div span {
+        top: -20px;
+        font-size: var(--font-largescreen);
+    }
+
+    .paragraph-about {
+        width: var(--width-largescreen);
+    }
+
+    .paragraph-about p {
+        font-size: var(--fontpar-largescreen);
+    }
+
+    .contact-me form input {
+        width: var(--width-largescreen);
+    }
+
+    .contact-me textarea {
+        width: var(--width-largescreen);
+    }
+
+    .contact-me button {
+        margin: 10px 650px 10px 0;
+        padding: 10px;
+    }
+
+    .about button {
+        margin: 50px auto 20px;
+    }
+
+    .my-information {
+        width: var(--width-largescreen);
+        height: 20vh;
+        margin: 10px 0;
+    }
+
+    .my-information .location {
+        font-size: var(--font-largefooter);
+        padding: 0 10px;
+    }
+
+    .my-information h5 {
+        font-size: 15px;
+    }
+
+    .my-information div {
+        width: 25%;
+    }
+
+    .my-information .around-me h5 {
+        padding: 10px !important;
+        font-size: 15px;
+    }
+
+    .fa-brands {
+        font-size: 15px;
+    }
+
+    .around-me {
+        padding: 10px;
+    }
+
+    .around-me span {
+        margin: 2px;
+    }
+
+    .my-information .about-freelance {
+        font-size: var(--font-largefooter);
+    }
+
+    .drakness {
+        font-size: var(--font-largefooter);
+    }
+}
